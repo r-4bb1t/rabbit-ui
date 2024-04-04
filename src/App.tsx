@@ -1,7 +1,7 @@
 export default function App() {
   return (
-    <main>
-      <h1 className="text-2xl font-bold">Playground</h1>
+    <main className="w-full h-full flex flex-col items-center justify-center p-8">
+      <button>Test me</button>
     </main>
   );
 }
