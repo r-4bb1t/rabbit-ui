@@ -18,20 +18,26 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
+      {...props}
       className={cc([
+        "rounded flex items-center transition-colors disabled:opacity-20 relative",
         ghost
           ? "bg-transparent hover:bg-primary-background/10 text-primary-background disabled:bg-transparent"
           : "bg-primary-background hover:bg-primary-darker text-primary-text disabled:bg-primary-background",
-        "rounded flex items-center transition-colors disabled:opacity-20",
         size === "xs" && "text-xs px-2 py-1.5",
         size === "sm" && "text-sm px-3 py-2",
         size === "md" && "text-base px-4 py-2",
         size === "lg" && "text-lg px-5 py-2",
+        props.className,
       ])}
       disabled={loading}
-      {...props}
     >
-      {loading ? <Spinner size={size} /> : children}
+      {loading && (
+        <div className="w-full h-full absolute inset-0 flex items-center justify-center">
+          <Spinner size={size} />
+        </div>
+      )}
+      <div className={cc([loading && "invisible"])}>{children}</div>
     </button>
   );
 }
