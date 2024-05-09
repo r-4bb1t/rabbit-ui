@@ -6,13 +6,21 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        primary: {
+          background: "#111111",
+          darker: "#0d0d0d",
+          text: "#f5f5f5",
+          disabled: "#b4b4b4",
+        },
+      },
       minHeight: {
         // @ts-expect-error this can be an array
         screen: ["100vh", "100dvh"],
       },
       height: {
         // @ts-expect-error this can be an array
-        screen: ["100vh", "100dvh"]
+        screen: ["100vh", "100dvh"],
       },
       fontFamily: {
         sans: [
