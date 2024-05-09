@@ -7,14 +7,14 @@ interface LayoutProps {
 
 export default function Layout({ mobileFirst = false, children }: LayoutProps) {
   return (
-    <div className="w-full flex justify-center h-[100dvh] overflow-auto">
+    <div className="w-full flex justify-center h-screen">
       <div
         className={cc([
-          "w-full h-full flex flex-col items-center shadow-xl relative",
+          "w-full shadow-xl h-screen overflow-auto no-scrollbar",
           mobileFirst && "max-w-md",
         ])}
       >
-        {children}
+        <div className="flex flex-col items-center relative">{children}</div>
       </div>
     </div>
   );
