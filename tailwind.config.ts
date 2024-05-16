@@ -13,9 +13,9 @@ export const config: Config = {
           text: "#f5f5f5",
           disabled: "#b4b4b4",
         },
-        success: "#0022ff",
-        warning: "#ffcc00",
-        error: "#ff0000",
+        success: "#6666dd",
+        warning: "#dd9933",
+        error: "#dd6666",
       },
       minHeight: {
         // @ts-expect-error this can be an array

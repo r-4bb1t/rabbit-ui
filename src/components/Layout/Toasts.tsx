@@ -60,7 +60,14 @@ const Toast = ({
           removeToast(item.id!);
         }}
       >
-        <X className="w-4 h-4 fill-black" />
+        <X
+          className={cc([
+            "w-4 h-4",
+            item.type === "info"
+              ? "text-primary-text"
+              : "text-primary-background",
+          ])}
+        />
       </Button>
     </motion.div>
   );

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Button from "./components/Button";
 import Layout from "./components/Layout";
 import Header from "./components/Layout/Header";
@@ -5,6 +7,7 @@ import { useContextStore } from "./store/contextStore";
 
 export default function App() {
   const { addToast, openModal } = useContextStore();
+  const [mobileFirst, setMobileFirst] = useState(false);
 
   const handleClick = () => {
     addToast({
@@ -34,9 +37,17 @@ export default function App() {
   };
 
   return (
-    <Layout mobileFirst>
-      <Header mobileFirst></Header>
-      <main className="w-full pt-24 flex flex-col items-center justify-center p-8 bg-gradient-to-tr from-red-400 to-blue-400 gap-4">
+    <Layout mobileFirst={mobileFirst}>
+      <Header mobileFirst={mobileFirst}></Header>
+      <main className="w-full pt-24 flex flex-col items-center justify-center p-8 bg-gradient-to-tr from-gray-200 to-gray-400 gap-4">
+        <label className="flex gap-2 items-center">
+          <input
+            type="checkbox"
+            checked={mobileFirst}
+            onChange={(e) => setMobileFirst(e.target.checked)}
+          />
+          Mobile First
+        </label>
         {["xs", "sm", "md", "lg"].map((size) => (
           <div className="flex items-center gap-2" key={size}>
             <Button
@@ -44,13 +55,13 @@ export default function App() {
               size={size as "xs" | "sm" | "md" | "lg"}
               loading
             >
-              Click me!
+              Toast
             </Button>
             <Button
               onClick={handleClick}
               size={size as "xs" | "sm" | "md" | "lg"}
             >
-              Add Toast
+              Toast
             </Button>
             <Button
               onClick={handleClick}
@@ -58,14 +69,14 @@ export default function App() {
               loading
               ghost
             >
-              Click me!
+              Modal
             </Button>
             <Button
               onClick={openTestModal}
               size={size as "xs" | "sm" | "md" | "lg"}
               ghost
             >
-              Open Modal
+              Modal
             </Button>
           </div>
         ))}
