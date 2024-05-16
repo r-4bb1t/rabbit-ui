@@ -1,3 +1,5 @@
+import Modal from "./Modal";
+import Toasts from "./Toasts";
 import cc from "classcat";
 
 interface LayoutProps {
@@ -8,6 +10,8 @@ interface LayoutProps {
 export default function Layout({ mobileFirst = false, children }: LayoutProps) {
   return (
     <div className="w-full flex justify-center h-screen">
+      <Toasts mobileFirst={mobileFirst} />
+      <Modal mobileFirst={mobileFirst} />
       <div
         className={cc([
           "w-full shadow-xl h-screen overflow-auto no-scrollbar",
