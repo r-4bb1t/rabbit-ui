@@ -4,7 +4,7 @@ import Header from "./components/Layout/Header";
 
 export default function App() {
   return (
-    <Layout mobileFirst>
+    <Layout>
       <Header></Header>
       <main className="w-full flex flex-col items-center justify-center p-8 bg-gradient-to-tr from-red-400 to-blue-400 gap-4">
         {["xs", "sm", "md", "lg"].map((size) => (
