@@ -20,7 +20,7 @@ export default function Button({
     <button
       {...props}
       className={cc([
-        "rounded flex items-center transition-colors disabled:opacity-20 relative shrink-0",
+        "rounded flex items-center transition-colors disabled:opacity-20 relative shrink-0 w-fit",
         ghost
           ? "bg-transparent hover:bg-primary-background/10 text-primary-background disabled:bg-transparent"
           : "bg-primary-background hover:bg-primary-darker text-primary-text disabled:bg-primary-background",

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from "./components/Button";
 import Layout from "./components/Layout";
 import Header from "./components/Layout/Header";
+import Form from "./form";
 import { useContextStore } from "./store/contextStore";
 
 export default function App() {
@@ -80,6 +81,8 @@ export default function App() {
             </Button>
           </div>
         ))}
+
+        <Form />
         <div className="h-[1000px]" />
       </main>
     </Layout>
