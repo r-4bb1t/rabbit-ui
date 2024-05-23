@@ -14,8 +14,8 @@ export default function Layout({ mobileFirst = false, children }: LayoutProps) {
       <Modal mobileFirst={mobileFirst} />
       <div
         className={cc([
-          "w-full shadow-xl h-screen overflow-auto no-scrollbar",
-          mobileFirst && "max-w-md",
+          "w-full h-screen overflow-auto no-scrollbar",
+          mobileFirst && "max-w-md shadow-xl",
         ])}
       >
         <div className="flex flex-col items-center relative">{children}</div>
