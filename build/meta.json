@@ -1,0 +1,53 @@
+{
+  "about": {
+    "homepage": "https://www.ladle.dev",
+    "github": "https://github.com/tajo/ladle",
+    "version": 1
+  },
+  "stories": {
+    "alerts--modal": {
+      "name": "Modal",
+      "levels": [
+        "Alerts"
+      ],
+      "locStart": 29,
+      "locEnd": 81,
+      "filePath": "src/stories/alerts.stories.tsx",
+      "namedExport": "Modal",
+      "meta": {}
+    },
+    "alerts--toast": {
+      "name": "Toast",
+      "levels": [
+        "Alerts"
+      ],
+      "locStart": 6,
+      "locEnd": 27,
+      "filePath": "src/stories/alerts.stories.tsx",
+      "namedExport": "Toast",
+      "meta": {}
+    },
+    "button--text-button": {
+      "name": "Text button",
+      "levels": [
+        "Button"
+      ],
+      "locStart": 5,
+      "locEnd": 12,
+      "filePath": "src/stories/button.stories.tsx",
+      "namedExport": "TextButton",
+      "meta": {}
+    },
+    "form--text-input": {
+      "name": "Text input",
+      "levels": [
+        "Form"
+      ],
+      "locStart": 5,
+      "locEnd": 11,
+      "filePath": "src/stories/form.stories.tsx",
+      "namedExport": "TextInput",
+      "meta": {}
+    }
+  }
+}
