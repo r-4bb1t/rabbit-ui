@@ -29,7 +29,7 @@ export default function Input({
       </label>
       <div
         className={cc([
-          "border border-primary-background/20 placeholder:text-primary-background/50 px-3 flex items-center rounded bg-white focus-within:border-2",
+          "border border-primary-background/20 placeholder:text-primary-background/50 px-3 flex items-center rounded bg-white focus-within:border-primary-background",
           size === "xs" && "text-xs h-8",
           size === "sm" && "text-sm h-10",
           size === "md" && "text-base h-12",
