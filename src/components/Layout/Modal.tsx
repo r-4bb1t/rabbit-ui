@@ -27,7 +27,9 @@ export default function Modal({ mobileFirst }: { mobileFirst?: boolean }) {
             ])}
             onClick={(e) => e.stopPropagation()}
           >
-            {modal.children}
+            <div className="w-full max-h-[560px] overflow-auto p-4">
+              {modal.children}
+            </div>
             <div className="w-full flex flex-row-reverse justify-between">
               <Button
                 onClick={() => {

@@ -28,6 +28,28 @@ export default function App() {
             className="w-full h-96 object-cover rounded-lg"
           />
           This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
+          <br />
+          This is a test modal
         </div>
       ),
       submitButtonText: "확인",
@@ -136,6 +158,7 @@ export default function App() {
               },
             ]}
             size="sm"
+            placeholder="asdf"
           />
           <Input
             type="text"

@@ -1,7 +1,7 @@
 import type { InputHTMLAttributes } from "react";
 
 import cc from "classcat";
-import { Check, X } from "lucide-react";
+import { Check, Circle, X } from "lucide-react";
 
 export interface InputProps {
   label: string;
@@ -21,13 +21,15 @@ export default function Input({
 }: InputProps & InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div className="flex flex-col w-full gap-1">
-      <label className="block text-sm font-semibold">
+      <label className="text-sm font-semibold flex gap-0.5 items-center">
         {label}
-        {props.required && " *"}
+        {props.required && (
+          <div className="w-1 h-1 rounded-full bg-primary-background -translate-y-1" />
+        )}
       </label>
       <div
         className={cc([
-          "border border-primary-background px-3 flex items-center rounded bg-primary-text focus-within:border-2",
+          "border border-primary-background/20 placeholder:text-primary-background/50 px-3 flex items-center rounded bg-white focus-within:border-2",
           size === "xs" && "text-xs h-8",
           size === "sm" && "text-sm h-10",
           size === "md" && "text-base h-12",
