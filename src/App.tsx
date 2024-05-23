@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Button from "./components/Button";
+import Input from "./components/Input";
 import Layout from "./components/Layout";
 import Header from "./components/Layout/Header";
 import { useContextStore } from "./store/contextStore";
@@ -39,7 +40,7 @@ export default function App() {
   return (
     <Layout mobileFirst={mobileFirst}>
       <Header mobileFirst={mobileFirst}></Header>
-      <main className="w-full pt-24 flex flex-col items-center justify-center p-8 bg-gradient-to-tr from-gray-200 to-gray-400 gap-4">
+      <main className="w-full pt-24 flex flex-col items-center justify-center p-8 gap-4">
         <label className="flex gap-2 items-center">
           <input
             type="checkbox"
@@ -80,7 +81,97 @@ export default function App() {
             </Button>
           </div>
         ))}
-        <div className="h-[1000px]" />
+        <div className="flex flex-col w-full gap-2 max-w-sm">
+          <Input
+            type="text"
+            label="name"
+            error={[
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: true,
+              },
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: false,
+              },
+            ]}
+            required
+          />
+          <Input type="number" label="age" />
+          <Input type="date" label="date" />
+
+          <Input
+            type="text"
+            label="xs"
+            error={[
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: true,
+              },
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: false,
+              },
+            ]}
+            size="xs"
+            required
+          />
+          <Input
+            type="text"
+            label="sm"
+            error={[
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: true,
+              },
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: false,
+              },
+            ]}
+            size="sm"
+          />
+          <Input
+            type="text"
+            label="md"
+            error={[
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: true,
+              },
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: false,
+              },
+            ]}
+            size="md"
+          />
+          <Input
+            type="text"
+            label="lg"
+            error={[
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: true,
+              },
+              {
+                err: "This is an error message",
+                ok: "ok",
+                status: false,
+              },
+            ]}
+            size="lg"
+          />
+        </div>
       </main>
     </Layout>
   );
