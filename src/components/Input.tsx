@@ -1,11 +1,11 @@
 import type { InputHTMLAttributes } from "react";
 
 import cc from "classcat";
-import { Check, Circle, X } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 export interface InputProps {
   label: string;
-  size?: "xs" | "sm" | "md" | "lg";
+  sz?: "xs" | "sm" | "md" | "lg";
   error?: {
     err: string;
     ok: string;
@@ -15,7 +15,7 @@ export interface InputProps {
 
 export default function Input({
   label,
-  size = "md",
+  sz = "md",
   error,
   ...props
 }: InputProps & InputHTMLAttributes<HTMLInputElement>) {
@@ -30,10 +30,10 @@ export default function Input({
       <div
         className={cc([
           "border border-primary-background/20 placeholder:text-primary-background/50 px-3 flex items-center rounded bg-white focus-within:border-primary-background",
-          size === "xs" && "text-xs h-8",
-          size === "sm" && "text-sm h-10",
-          size === "md" && "text-base h-12",
-          size === "lg" && "text-lg h-14",
+          sz === "xs" && "text-xs h-8",
+          sz === "sm" && "text-sm h-10",
+          sz === "md" && "text-base h-12",
+          sz === "lg" && "text-lg h-14",
         ])}
       >
         <input

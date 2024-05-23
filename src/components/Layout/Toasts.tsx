@@ -55,7 +55,7 @@ const Toast = ({
       </div>
       <Button
         ghost
-        size="xs"
+        sz="xs"
         onClick={() => {
           removeToast(item.id!);
         }}
