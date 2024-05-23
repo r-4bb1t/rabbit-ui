@@ -1,4 +1,4 @@
-import { Button } from "..";
+import Button from "@/components/Button";
 
 import type { Story } from "@ladle/react";
 
