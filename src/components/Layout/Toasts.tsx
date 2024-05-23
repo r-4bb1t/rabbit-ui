@@ -41,11 +41,11 @@ const Toast = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       className={cc([
-        "flex justify-between items-center w-full p-4 rounded text-primary-text gap-4 pointer-events-auto backdrop-blur",
-        item.type === "info" && "bg-primary-background/70",
+        "flex justify-between items-center w-full p-4 rounded bg-primary-background/70 text-primary-text gap-4 pointer-events-auto backdrop-blur",
+        /* item.type === "info" && "bg-primary-background/70",
         item.type === "success" && "bg-success/70",
         item.type === "error" && "bg-error/70",
-        item.type === "warning" && "bg-warning/70",
+        item.type === "warning" && "bg-warning/70", */
         mobileFirst && "max-w-sm",
       ])}
     >
@@ -60,14 +60,7 @@ const Toast = ({
           removeToast(item.id!);
         }}
       >
-        <X
-          className={cc([
-            "w-4 h-4",
-            item.type === "info"
-              ? "text-primary-text"
-              : "text-primary-background",
-          ])}
-        />
+        <X className={cc(["w-4 h-4 text-primary-text"])} />
       </Button>
     </motion.div>
   );
