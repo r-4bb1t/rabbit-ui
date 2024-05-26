@@ -4,8 +4,8 @@
   "version": "0.0.16",
   "type": "module",
   "author": "r-4bb1t",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
   "files": [
     "dist"
   ],
