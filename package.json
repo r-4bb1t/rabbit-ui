@@ -1,7 +1,7 @@
 {
   "name": "@r-4bb1t/rabbit-ui",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.13",
   "type": "module",
   "author": "r-4bb1t",
   "main": "dist/src/index.js",
@@ -11,16 +11,13 @@
     "type": "git",
     "url": "https://github.com/r-4bb1t/rabbit-ui.git"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc",
+    "build": "vite build && tsc",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "dep": "tsc && npm publish --access=public"
+    "dep": "npm publish --access=public"
   },
   "dependencies": {
     "@ladle/react": "^4.0.3",
