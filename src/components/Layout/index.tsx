@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from "react";
+
 import Modal from "./Modal";
 import Toasts from "./Toasts";
 import cc from "classcat";
@@ -7,9 +9,16 @@ interface LayoutProps {
   mobileFirst?: boolean;
 }
 
-export default function Layout({ mobileFirst = false, children }: LayoutProps) {
+export default function Layout({
+  mobileFirst = false,
+  children,
+  ...props
+}: LayoutProps & HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="w-full flex justify-center h-screen">
+    <div
+      {...props}
+      className={cc(["w-full flex justify-center h-screen", props.className])}
+    >
       <Toasts mobileFirst={mobileFirst} />
       <Modal mobileFirst={mobileFirst} />
       <div
