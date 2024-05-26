@@ -15,10 +15,7 @@ export default function Layout({
   ...props
 }: LayoutProps & HTMLAttributes<HTMLDivElement>) {
   return (
-    <div
-      {...props}
-      className={cc(["w-full flex justify-center h-screen", props.className])}
-    >
+    <div className="w-full flex justify-center h-screen">
       <Toasts mobileFirst={mobileFirst} />
       <Modal mobileFirst={mobileFirst} />
       <div
@@ -27,7 +24,9 @@ export default function Layout({
           mobileFirst && "max-w-md shadow-xl",
         ])}
       >
-        <div className="flex flex-col items-center relative">{children}</div>
+        <div {...props} className={cc(["relative", props.className])}>
+          {children}
+        </div>
       </div>
     </div>
   );
