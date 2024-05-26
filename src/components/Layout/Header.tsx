@@ -1,8 +1,10 @@
 import cc from "classcat";
 
 export default function Header({
+  title,
   mobileFirst = false,
 }: {
+  title: React.ReactNode;
   mobileFirst?: boolean;
 }) {
   return (
@@ -12,7 +14,7 @@ export default function Header({
         mobileFirst && "max-w-md",
       ])}
     >
-      asdf
+      {title}
     </header>
   );
 }

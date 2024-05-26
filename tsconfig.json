@@ -22,9 +22,9 @@
   },
 
   "include": [
-    "src/components/*",
-    "src/types/*",
-    "src/store/*",
+    "src/components/**/*",
+    "src/types/**/*",
+    "src/store/**/*",
     "src/globals.css",
     "src/index.ts"
   ]
