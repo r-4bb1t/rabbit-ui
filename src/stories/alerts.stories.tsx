@@ -1,6 +1,6 @@
 import { Button, Layout } from "..";
+import { useContextStore } from "../store/contextStore";
 
-import { useContextStore } from "@/store/contextStore";
 import type { Story } from "@ladle/react";
 
 export const Toast: Story = () => {

@@ -1,7 +1,7 @@
 {
   "name": "@r-4bb1t/rabbit-ui",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "author": "r-4bb1t",
   "main": "dist/src/index.js",
@@ -19,7 +19,8 @@
     "build": "tsc",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "tsc && npm publish --access=public"
   },
   "dependencies": {
     "@ladle/react": "^4.0.3",

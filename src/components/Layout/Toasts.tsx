@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 
+import { useContextStore } from "../../store/contextStore";
+import type { ToastType } from "../../types/modalType";
 import Button from "../Button";
 import cc from "classcat";
 import { AnimatePresence, motion } from "framer-motion";
 import { CircleCheck, CircleX, Info, TriangleAlert, X } from "lucide-react";
-
-import { useContextStore } from "@/store/contextStore";
-import type { ToastType } from "@/types/modalType";
 
 export default function Toasts({ mobileFirst }: { mobileFirst?: boolean }) {
   const { toasts } = useContextStore();

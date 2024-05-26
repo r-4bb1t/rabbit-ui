@@ -1,6 +1,5 @@
+import type { ModalType, ToastType } from "../types/modalType";
 import { create } from "zustand";
-
-import type { ModalType, ToastType } from "@/types/modalType";
 
 interface ContextState {
   toasts: ToastType[];
