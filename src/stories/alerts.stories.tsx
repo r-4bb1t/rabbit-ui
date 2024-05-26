@@ -1,10 +1,10 @@
 import { Button, Layout } from "..";
-import { useContextStore } from "../store/contextStore";
+import { useAlert } from "../store/contextStore";
 
 import type { Story } from "@ladle/react";
 
 export const Toast: Story = () => {
-  const { addToast } = useContextStore();
+  const { addToast } = useAlert();
 
   return (
     <Layout>
@@ -27,7 +27,7 @@ export const Toast: Story = () => {
 };
 
 export const Modal: Story = () => {
-  const { openModal } = useContextStore();
+  const { openModal } = useAlert();
 
   return (
     <Layout>

@@ -1,10 +1,10 @@
-import { useContextStore } from "../../store/contextStore";
+import { useAlert } from "../../store/contextStore";
 import Button from "../Button";
 import cc from "classcat";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Modal({ mobileFirst }: { mobileFirst?: boolean }) {
-  const { modal, closeModal } = useContextStore();
+  const { modal, closeModal } = useAlert();
 
   return (
     <AnimatePresence>

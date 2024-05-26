@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useContextStore } from "../../store/contextStore";
+import { useAlert } from "../../store/contextStore";
 import type { ToastType } from "../../types/modalType";
 import Button from "../Button";
 import cc from "classcat";
@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CircleCheck, CircleX, Info, TriangleAlert, X } from "lucide-react";
 
 export default function Toasts({ mobileFirst }: { mobileFirst?: boolean }) {
-  const { toasts } = useContextStore();
+  const { toasts } = useAlert();
 
   return (
     <div className="z-20 fixed inset-0 flex p-4 flex-col pointer-events-none gap-1 items-center">
@@ -28,7 +28,7 @@ const Toast = ({
   item: ToastType;
   mobileFirst: boolean;
 }) => {
-  const { removeToast } = useContextStore();
+  const { removeToast } = useAlert();
 
   useEffect(() => {
     setTimeout(() => removeToast(item.id!), 5000);

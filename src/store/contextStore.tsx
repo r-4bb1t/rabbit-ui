@@ -11,7 +11,7 @@ interface ContextState {
   closeModal: () => void;
 }
 
-export const useContextStore = create<ContextState>((set) => ({
+export const useAlert = create<ContextState>((set) => ({
   toasts: [],
   addToast: (toast: ToastType) =>
     set((state: ContextState) => ({
