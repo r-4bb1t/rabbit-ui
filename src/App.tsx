@@ -4,6 +4,7 @@ import Button from "./components/Button";
 import Input from "./components/Input";
 import Layout from "./components/Layout";
 import Header from "./components/Layout/Header";
+import Pagination from "./components/Pagination";
 import { useAlert } from "./store/contextStore";
 
 export default function App() {
@@ -71,6 +72,7 @@ export default function App() {
           />
           Mobile First
         </label>
+        <Pagination current={1} total={10} prev={() => {}} next={() => {}} />
         {["xs", "sm", "md", "lg"].map((sz) => (
           <div className="flex items-center gap-2" key={sz}>
             <Button

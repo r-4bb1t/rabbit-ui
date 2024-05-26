@@ -1,7 +1,7 @@
 {
   "name": "@r-4bb1t/rabbit-ui",
   "private": false,
-  "version": "0.0.23",
+  "version": "0.0.24",
   "type": "module",
   "author": "r-4bb1t",
   "main": "dist/src/index.js",

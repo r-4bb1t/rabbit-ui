@@ -1,18 +1,24 @@
+import Icon from "./Icon";
 import Spinner from "./Spinner";
 import cc from "classcat";
+import { icons } from "lucide-react";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   sz?: "xs" | "sm" | "md" | "lg";
   ghost?: boolean;
-  children: React.ReactNode;
+  icon?: keyof typeof icons;
+  square?: boolean;
+  children?: React.ReactNode;
 }
 
 export default function Button({
   loading = false,
   sz: sz = "md",
   ghost = false,
+  icon,
+  square = false,
   children,
   ...props
 }: ButtonProps) {
@@ -20,14 +26,14 @@ export default function Button({
     <button
       {...props}
       className={cc([
-        "rounded flex items-center transition-colors disabled:opacity-20 relative shrink-0 w-fit",
+        "rounded flex items-center justify-center transition-colors disabled:opacity-20 relative shrink-0 w-fit",
         ghost
           ? "bg-transparent hover:bg-primary-background/10 text-primary-background disabled:bg-transparent"
           : "bg-primary-background hover:bg-primary-darker text-primary-text disabled:bg-primary-background",
-        sz === "xs" && "text-xs px-2 py-1.5",
-        sz === "sm" && "text-sm px-3 py-2",
-        sz === "md" && "text-base px-4 py-2",
-        sz === "lg" && "text-lg px-5 py-2",
+        sz === "xs" && (square ? "text-xs h-7 w-7" : "text-xs px-2 h-7"),
+        sz === "sm" && (square ? "text-sm h-9 w-8" : "text-sm px-3 h-8"),
+        sz === "md" && (square ? "text-md h-9 w-9" : "text-base px-4 h-9"),
+        sz === "lg" && (square ? "text-lg h-11 w-11" : "text-lg px-5 h-11"),
         props.className,
       ])}
       disabled={loading}
@@ -37,7 +43,15 @@ export default function Button({
           <Spinner sz={sz} />
         </div>
       )}
-      <div className={cc([loading && "invisible"])}>{children}</div>
+      <div className={cc([loading && "invisible"])}>
+        {icon && (
+          <Icon
+            name={icon}
+            size={sz === "xs" ? 16 : sz === "sm" ? 18 : sz === "md" ? 20 : 24}
+          />
+        )}{" "}
+        {children}
+      </div>
     </button>
   );
 }

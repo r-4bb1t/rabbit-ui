@@ -12,18 +12,20 @@ export default function Layout({
   ...props
 }: LayoutProps & React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="w-full flex justify-center h-screen">
-      <Alerts mobileFirst={mobileFirst} />
-      <div
-        className={cc([
-          "w-full h-screen overflow-auto no-scrollbar",
-          mobileFirst && "max-w-md shadow-xl",
-        ])}
-      >
-        <div {...props} className={cc(["relative", props.className])}>
-          {children}
+    <>
+      <div className="w-full flex justify-center h-screen">
+        <Alerts mobileFirst={mobileFirst} />
+        <div
+          className={cc([
+            "w-full h-screen overflow-auto no-scrollbar",
+            mobileFirst && "max-w-md shadow-xl",
+          ])}
+        >
+          <div {...props} className={cc(["relative", props.className])}>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
