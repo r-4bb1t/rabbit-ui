@@ -1,11 +1,14 @@
 {
   "name": "@r-4bb1t/rabbit-ui",
   "private": false,
-  "version": "0.0.14",
+  "version": "0.0.16",
   "type": "module",
   "author": "r-4bb1t",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "description": "Rabbit UI: A React component library",
   "repository": {
     "type": "git",
