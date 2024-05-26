@@ -61,7 +61,7 @@ export default function App() {
 
   return (
     <Layout mobileFirst={mobileFirst}>
-      <Header mobileFirst={mobileFirst}></Header>
+      <Header mobileFirst={mobileFirst} title="asdf"></Header>
       <main className="w-full pt-24 flex flex-col items-center justify-center p-8 gap-4">
         <label className="flex gap-2 items-center">
           <input
