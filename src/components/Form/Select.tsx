@@ -1,4 +1,11 @@
-import { type HTMLAttributes, useEffect, useRef, useState } from "react";
+import {
+  type Dispatch,
+  type HTMLAttributes,
+  type SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import cc from "classcat";
 import { AnimatePresence, motion } from "framer-motion";
@@ -16,8 +23,10 @@ export interface SelectProps {
     value: string | undefined;
     label: string;
   }[];
-  value?: string;
-  onChange?: (e: string) => void;
+  value?: string | number;
+  onChange?: (
+    e: string | number,
+  ) => void | Dispatch<SetStateAction<string | number>>;
 }
 
 export default function Select({
