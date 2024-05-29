@@ -1,7 +1,7 @@
 import Icon from "./Icon";
 import Spinner from "./Spinner";
 import cc from "classcat";
-import { icons } from "lucide-react";
+import type { icons } from "lucide-react";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
