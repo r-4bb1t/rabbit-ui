@@ -52,9 +52,11 @@ export default function Select({
 
   return (
     <div className="inline-flex flex-col gap-1 relative w-fit" ref={ref}>
-      <label className="text-sm font-semibold flex gap-0.5 items-center">
-        {label}
-      </label>
+      {label && (
+        <label className="text-sm font-semibold flex gap-0.5 items-center">
+          {label}
+        </label>
+      )}
       <div
         className={cc([
           "border relative border-primary/20 placeholder:text-primary/50 px-3 flex items-center pr-12 rounded bg-white focus-within:border-primary",
