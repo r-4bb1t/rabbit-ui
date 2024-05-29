@@ -7,7 +7,7 @@ export default function Header({
   mobileFirst = false,
   ...props
 }: {
-  title: React.ReactNode;
+  title: Element;
   mobileFirst?: boolean;
 } & HTMLAttributes<HTMLDivElement>) {
   return (
