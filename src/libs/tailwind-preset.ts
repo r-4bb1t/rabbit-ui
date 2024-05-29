@@ -29,4 +29,5 @@ export const tailwindPreset: Config = {
       },
     },
   },
+  plugins: [require("tailwind-scrollbar")],
 };

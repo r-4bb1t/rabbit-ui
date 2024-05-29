@@ -76,11 +76,10 @@ export const SelectInput: Story = () => (
         <Select
           label={sz}
           sz={sz as "xs" | "sm" | "md" | "lg"}
-          options={[
-            { value: "1", label: "Option 1" },
-            { value: "2", label: "Option 2" },
-            { value: "3", label: "Option 3" },
-          ]}
+          options={new Array(24).fill(0).map((_, i) => ({
+            value: i.toString(),
+            label: `Option ${i}`,
+          }))}
         />
       </>
     ))}

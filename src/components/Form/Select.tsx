@@ -51,13 +51,13 @@ export default function Select({
   }, []);
 
   return (
-    <div className="flex flex-col gap-1 relative" ref={ref}>
+    <div className="inline-flex flex-col gap-1 relative w-fit" ref={ref}>
       <label className="text-sm font-semibold flex gap-0.5 items-center">
         {label}
       </label>
       <div
         className={cc([
-          "border relative border-primary/20 placeholder:text-primary/50 px-3 flex items-center rounded bg-white focus-within:border-primary",
+          "border relative border-primary/20 placeholder:text-primary/50 px-3 flex items-center pr-12 rounded bg-white focus-within:border-primary",
           sz === "xs" && "text-xs h-8",
           sz === "sm" && "text-sm h-10",
           sz === "md" && "text-base h-12",
@@ -88,12 +88,12 @@ export default function Select({
             initial={{ opacity: 0, y: -5, scaleY: 0 }}
             animate={{ opacity: 1, y: 0, scaleY: 1 }}
             exit={{ opacity: 0, y: -5, scaleY: 0 }}
-            className="absolute z-10 flex flex-col border border-primary-bright divide-primary-bright top-full w-full rounded divide-y bg-white origin-top"
+            className="absolute z-10 max-h-48 overflow-auto scrollbar-thumb-primary scrollbar-track-transparent scrollbar-thin  flex flex-col border border-primary-bright divide-primary-bright top-full w-full rounded divide-y bg-white origin-top"
           >
             {options.map((opt) => (
               <div
                 className={cc([
-                  "hover:bg-primary-bright cursor-pointer select-none flex items-center px-2",
+                  "hover:bg-primary-bright cursor-pointer select-none flex items-center px-2 shrink-0",
                   (sz === "xs" || sz === "sm") && "text-xs h-8",
                   (sz === "md" || sz === "lg") && "text-sm h-10",
                 ])}

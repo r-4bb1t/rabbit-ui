@@ -20,7 +20,7 @@ export default function Input({
   ...props
 }: InputProps & InputHTMLAttributes<HTMLInputElement>) {
   return (
-    <div className="flex flex-col w-full gap-1">
+    <div className="inline-flex flex-col w-fit gap-1">
       {label && (
         <label className="text-sm font-semibold flex gap-0.5 items-center">
           {label}
