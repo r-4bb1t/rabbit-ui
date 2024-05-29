@@ -17,6 +17,7 @@ export interface SelectProps {
     label: string;
   }[];
   value?: string;
+  onChange?: (e: string) => void;
 }
 
 export default function Select({
@@ -25,11 +26,16 @@ export default function Select({
   error,
   options,
   value: defaultValue,
+  onChange,
   ...props
 }: SelectProps & HTMLAttributes<HTMLDivElement>) {
   const [value, setValue] = useState<string>((defaultValue ?? "") as string);
   const [open, setOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    onChange?.(value);
+  }, [onChange, value]);
 
   useEffect(() => {
     const handleBlur = (e: MouseEvent) => {
