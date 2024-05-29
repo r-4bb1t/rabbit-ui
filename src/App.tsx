@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Button from "./components/Button";
-import Input from "./components/Input";
+import Input from "./components/Form/Input";
 import Layout from "./components/Layout";
 import Header from "./components/Layout/Header";
 import Pagination from "./components/Pagination";

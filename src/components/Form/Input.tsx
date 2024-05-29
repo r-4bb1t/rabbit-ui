@@ -4,7 +4,7 @@ import cc from "classcat";
 import { Check, X } from "lucide-react";
 
 export interface InputProps {
-  label: string;
+  label?: string;
   sz?: "xs" | "sm" | "md" | "lg";
   error?: {
     err: string;
@@ -21,15 +21,17 @@ export default function Input({
 }: InputProps & InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div className="flex flex-col w-full gap-1">
-      <label className="text-sm font-semibold flex gap-0.5 items-center">
-        {label}
-        {props.required && (
-          <div className="w-1 h-1 rounded-full bg-primary-background -translate-y-1" />
-        )}
-      </label>
+      {label && (
+        <label className="text-sm font-semibold flex gap-0.5 items-center">
+          {label}
+          {props.required && (
+            <div className="w-1 h-1 rounded-full bg-primary -translate-y-1" />
+          )}
+        </label>
+      )}
       <div
         className={cc([
-          "border border-primary-background/20 placeholder:text-primary-background/50 px-3 flex items-center rounded bg-white focus-within:border-primary-background",
+          "border relative border-primary/20 placeholder:text-primary/50 px-3 flex items-center rounded bg-white focus-within:border-primary",
           sz === "xs" && "text-xs h-8",
           sz === "sm" && "text-sm h-10",
           sz === "md" && "text-base h-12",
@@ -42,7 +44,18 @@ export default function Input({
             "w-full outline-none bg-transparent",
             props.className,
           ])}
+          // type이 number일 때, 숫자만 입력할 수 있도록 설정
+          onChange={(e) => {
+            if (props.type === "number") {
+              e.target.value = e.target.value.replace(/[^0-9]/g, "");
+            }
+
+            props.onChange && props.onChange(e);
+          }}
         />
+        {!label && props.required && (
+          <div className="absolute right-2 top-3 w-1 h-1 rounded-full bg-primary -translate-y-1" />
+        )}
       </div>
       <ul>
         {error?.map((err, i) => (
@@ -50,7 +63,7 @@ export default function Input({
             key={i}
             className={cc([
               "text-sm flex items-center gap-1",
-              err.status ? "text-green-500" : "text-red-500",
+              err.status ? "text-ok" : "text-error",
             ])}
           >
             {err.status ? <Check size={14} /> : <X size={14} />}

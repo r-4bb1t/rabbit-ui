@@ -7,15 +7,15 @@ export default function Header({
   mobileFirst = false,
   ...props
 }: {
-  title: Element;
+  title: Element | string;
   mobileFirst?: boolean;
 } & HTMLAttributes<HTMLDivElement>) {
   return (
     <header
       {...props}
       className={cc([
-        "fixed top-0 w-full h-16 backdrop-blur z-10 shrink-0 flex items-center px-12",
-        mobileFirst && "max-w-md",
+        "fixed top-0 w-full h-16 backdrop-blur z-10 shrink-0 flex items-center",
+        mobileFirst ? "max-w-md px-4" : "px-12",
         props.className,
       ])}
     >

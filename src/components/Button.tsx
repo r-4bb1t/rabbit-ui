@@ -26,14 +26,16 @@ export default function Button({
     <button
       {...props}
       className={cc([
-        "rounded flex items-center justify-center transition-colors disabled:opacity-20 relative shrink-0 w-fit",
+        "rounded flex items-center justify-center transition-colors disabled:opacity-20 relative shrink-0",
         ghost
-          ? "bg-transparent hover:bg-primary-background/10 text-primary-background disabled:bg-transparent"
-          : "bg-primary-background hover:bg-primary-darker text-primary-text disabled:bg-primary-background",
-        sz === "xs" && (square ? "text-xs h-7 w-7" : "text-xs px-2 h-7"),
-        sz === "sm" && (square ? "text-sm h-9 w-8" : "text-sm px-3 h-8"),
-        sz === "md" && (square ? "text-md h-9 w-9" : "text-base px-4 h-9"),
-        sz === "lg" && (square ? "text-lg h-11 w-11" : "text-lg px-5 h-11"),
+          ? "bg-transparent hover:bg-primary/10 text-primary disabled:bg-transparent"
+          : "bg-primary hover:bg-primary-darker text-primary-text disabled:bg-primary",
+        sz === "xs" && (square ? "text-xs h-7 w-7" : "text-xs px-2 h-7 w-fit"),
+        sz === "sm" && (square ? "text-sm h-9 w-8" : "text-sm px-3 h-8 w-fit"),
+        sz === "md" &&
+          (square ? "text-md h-9 w-9" : "text-base px-4 h-9 w-fit"),
+        sz === "lg" &&
+          (square ? "text-lg h-11 w-11" : "text-lg px-5 h-11 w-fit"),
         props.className,
       ])}
       disabled={loading}

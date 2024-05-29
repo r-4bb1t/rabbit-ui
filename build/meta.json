@@ -38,13 +38,35 @@
       "namedExport": "TextButton",
       "meta": {}
     },
+    "form--number-input": {
+      "name": "Number input",
+      "levels": [
+        "Form"
+      ],
+      "locStart": 24,
+      "locEnd": 40,
+      "filePath": "src/stories/form.stories.tsx",
+      "namedExport": "NumberInput",
+      "meta": {}
+    },
+    "form--select-input": {
+      "name": "Select input",
+      "levels": [
+        "Form"
+      ],
+      "locStart": 42,
+      "locEnd": 54,
+      "filePath": "src/stories/form.stories.tsx",
+      "namedExport": "SelectInput",
+      "meta": {}
+    },
     "form--text-input": {
       "name": "Text input",
       "levels": [
         "Form"
       ],
-      "locStart": 5,
-      "locEnd": 11,
+      "locStart": 6,
+      "locEnd": 22,
       "filePath": "src/stories/form.stories.tsx",
       "namedExport": "TextInput",
       "meta": {}

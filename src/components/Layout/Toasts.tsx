@@ -11,12 +11,23 @@ export default function Toasts({ mobileFirst }: { mobileFirst?: boolean }) {
   const { toasts } = useAlert();
 
   return (
-    <div className="z-20 fixed inset-0 flex p-4 flex-col pointer-events-none gap-1 items-center">
-      <AnimatePresence>
-        {toasts.map((item) => (
-          <Toast key={item.id} item={item} mobileFirst={mobileFirst ?? false} />
-        ))}
-      </AnimatePresence>
+    <div className="z-20 fixed inset-0 pointer-events-none flex justify-center">
+      <div
+        className={cc([
+          "flex p-4 flex-col-reverse gap-1 items-end w-full",
+          mobileFirst && "max-w-sm",
+        ])}
+      >
+        <AnimatePresence>
+          {toasts.map((item) => (
+            <Toast
+              key={item.id}
+              item={item}
+              mobileFirst={mobileFirst ?? false}
+            />
+          ))}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
@@ -36,16 +47,16 @@ const Toast = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
       className={cc([
-        "flex justify-between items-center w-full p-4 rounded bg-primary-background/70 text-primary-text gap-4 pointer-events-auto backdrop-blur",
-        /* item.type === "info" && "bg-primary-background/70",
+        "flex justify-between items-center w-full max-w-sm p-4 rounded bg-primary/70 text-primary-text gap-4 pointer-events-auto backdrop-blur",
+        /* item.type === "info" && "bg-primary/70",
         item.type === "success" && "bg-success/70",
         item.type === "error" && "bg-error/70",
         item.type === "warning" && "bg-warning/70", */
-        mobileFirst && "max-w-sm",
+        mobileFirst && "max-w-xs",
       ])}
     >
       <div className="flex items-center gap-2">

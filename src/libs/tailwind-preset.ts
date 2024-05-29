@@ -6,10 +6,10 @@ export const tailwindPreset: Config = {
     extend: {
       colors: {
         primary: {
-          background: "#111111",
+          DEFAULT: "#111111",
           darker: "#0d0d0d",
           text: "#f5f5f5",
-          disabled: "#b4b4b4",
+          bright: "#b4b4b4",
         },
       },
       minHeight: {
