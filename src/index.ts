@@ -6,4 +6,4 @@ export { default as Header } from "./components/Layout/Header";
 
 export { useAlert } from "./store/contextStore";
 
-export { config as tailwindPreset } from "../tailwind.config";
+export { tailwindPreset } from "./libs/tailwind-preset";
