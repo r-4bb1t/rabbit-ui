@@ -36,14 +36,12 @@ export default function Input({
           sz === "sm" && "text-sm h-10",
           sz === "md" && "text-base h-12",
           sz === "lg" && "text-lg h-14",
+          props.className,
         ])}
       >
         <input
           {...props}
-          className={cc([
-            "w-full outline-none bg-transparent",
-            props.className,
-          ])}
+          className={cc(["w-full outline-none bg-transparent"])}
           // type이 number일 때, 숫자만 입력할 수 있도록 설정
           onChange={(e) => {
             if (props.type === "number") {

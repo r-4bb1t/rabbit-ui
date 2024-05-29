@@ -51,7 +51,7 @@ export default function Select({
   }, []);
 
   return (
-    <div className="flex flex-col w-full gap-1 relative" ref={ref}>
+    <div className="flex flex-col gap-1 relative" ref={ref}>
       <label className="text-sm font-semibold flex gap-0.5 items-center">
         {label}
       </label>
@@ -62,14 +62,12 @@ export default function Select({
           sz === "sm" && "text-sm h-10",
           sz === "md" && "text-base h-12",
           sz === "lg" && "text-lg h-14",
+          props.className,
         ])}
       >
         <div
           {...props}
-          className={cc([
-            "w-full outline-none bg-transparent select-none",
-            props.className,
-          ])}
+          className={cc(["w-full outline-none bg-transparent select-none"])}
           onClick={() => setOpen(!open)}
         >
           {options.find((opt) => opt.value === value)?.label ?? "Select"}
