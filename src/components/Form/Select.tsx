@@ -75,11 +75,11 @@ export default function Select({
           sz === "lg" && "text-lg h-14",
           props.className,
         ])}
+        onClick={() => setOpen(!open)}
       >
         <div
           {...props}
           className={cc(["w-full outline-none bg-transparent select-none"])}
-          onClick={() => setOpen(!open)}
         >
           {options.find((opt) => opt.value === value)?.label ?? "Select"}
         </div>
