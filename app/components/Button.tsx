@@ -40,7 +40,7 @@ export default function Button({
           (square ? "text-lg h-11 w-11" : "text-lg px-5 h-11 w-fit"),
         props.className,
       ])}
-      disabled={loading}
+      disabled={loading || props.disabled}
     >
       {loading && (
         <div className="w-full h-full absolute inset-0 flex items-center justify-center">

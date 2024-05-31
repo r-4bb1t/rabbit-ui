@@ -14,6 +14,7 @@ import { Check, ChevronDown, X } from "lucide-react";
 export interface SelectProps {
   label?: string;
   sz?: "xs" | "sm" | "md" | "lg";
+  disabled?: boolean;
   error?: {
     err: string;
     ok: string;
@@ -32,6 +33,7 @@ export interface SelectProps {
 export default function Select({
   label,
   sz = "md",
+  disabled = false,
   error,
   options,
   value: defaultValue,
@@ -73,6 +75,8 @@ export default function Select({
           sz === "sm" && "text-sm h-10",
           sz === "md" && "text-base h-12",
           sz === "lg" && "text-lg h-14",
+          disabled &&
+            "pointer-events-none cursor-not-allowed border-primary-bright",
           props.className,
         ])}
         onClick={() => setOpen(!open)}

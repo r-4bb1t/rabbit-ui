@@ -36,6 +36,8 @@ export default function Input({
           sz === "sm" && "text-sm h-10",
           sz === "md" && "text-base h-12",
           sz === "lg" && "text-lg h-14",
+          props.disabled &&
+            "pointer-events-none cursor-not-allowed border-primary-bright",
           props.className,
         ])}
       >

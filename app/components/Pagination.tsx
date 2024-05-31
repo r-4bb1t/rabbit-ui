@@ -14,7 +14,7 @@ export default function Pagination({
   next: () => void;
 }) {
   return (
-    <div className="flex justify-between items-center w-full h-16 px-12 max-w-sm">
+    <div className="flex justify-between items-center w-full h-16 px-12 max-w-sm gap-8">
       <Button
         onClick={prev}
         disabled={current === 1}
