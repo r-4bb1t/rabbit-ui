@@ -7,7 +7,7 @@ export default function Header({
   mobileFirst = false,
   ...props
 }: {
-  title: Element | string;
+  title: string | JSX.Element;
   mobileFirst?: boolean;
 } & HTMLAttributes<HTMLDivElement>) {
   return (

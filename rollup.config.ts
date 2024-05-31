@@ -1,5 +1,6 @@
 import type { RollupOptions } from "rollup";
 import { dts } from "rollup-plugin-dts";
+import preserveDirectives from "rollup-preserve-directives";
 
 import babel from "@rollup/plugin-babel";
 import terser from "@rollup/plugin-terser";
@@ -28,6 +29,7 @@ const sourceOptions: RollupOptions = {
       extensions: [".js", ".jsx", ".ts", ".tsx"],
     }),
     terser(),
+    preserveDirectives(),
   ],
 };
 
