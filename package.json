@@ -18,7 +18,7 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:rollup": "tsc --project app && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript && rmdir /s /q dist\\types",
+    "build:rollup": "rmdir /s /q dist && tsc --project app && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript && rmdir /s /q dist\\src\\types",
     "dep": "npm publish --access=public"
   },
   "dependencies": {

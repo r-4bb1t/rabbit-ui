@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactElement } from "react";
 
 import cc from "classcat";
 
@@ -7,7 +7,7 @@ export default function Header({
   mobileFirst = false,
   ...props
 }: {
-  title: string | JSX.Element;
+  title: string | JSX.Element | ReactElement;
   mobileFirst?: boolean;
 } & HTMLAttributes<HTMLDivElement>) {
   return (

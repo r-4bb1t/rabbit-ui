@@ -8,7 +8,7 @@ import typescript from "@rollup/plugin-typescript";
 
 const sourceOptions: RollupOptions = {
   input: "app/index.ts",
-  output: { dir: "dist", preserveModules: true },
+  output: { dir: "dist\\src", preserveModules: true },
   external: [
     "lucide-react",
     "react",
@@ -34,9 +34,9 @@ const sourceOptions: RollupOptions = {
 };
 
 const typeOptions: RollupOptions = {
-  input: "dist/types/index.d.ts",
+  input: "dist\\src\\types\\index.d.ts",
   output: {
-    file: "dist/index.d.ts",
+    file: "dist\\src\\index.d.ts",
   },
   plugins: [
     dts({
