@@ -1,11 +1,10 @@
 import { tailwindPreset } from "./app";
+import tailwindScrollbar from "tailwind-scrollbar";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
   presets: [tailwindPreset],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./stories/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -23,6 +22,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindScrollbar],
 };
 export default config;

@@ -27,9 +27,7 @@ export interface SelectProps {
     label: string;
   }[];
   value?: string | number | undefined;
-  onChange?: (
-    e: string | number | undefined,
-  ) => void | Dispatch<SetStateAction<string | number | undefined>>;
+  onChange?: (value: any) => void;
 }
 
 export default function Select({
