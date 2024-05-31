@@ -9,15 +9,24 @@
 ```ts
 // layout.tsx
 import { Header, Layout } from "@r-4bb1t/rabbit-ui";
-...
-export default function App() {
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <Layout className="flex" mobileFirst>
-      <Header title="..." mobileFirst />
-      {children}
-    </Layout>
+    <html>
+      <body>
+        <Layout {...}>
+          <Header {...}/>
+          {children}
+        </Layout>
+      </body>
+    </html>
   );
 }
+
 ```
 
 ```ts
