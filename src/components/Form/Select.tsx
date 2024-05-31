@@ -20,10 +20,10 @@ export interface SelectProps {
     status: boolean;
   }[];
   options: {
-    value: string | undefined;
+    value: string | number | undefined;
     label: string;
   }[];
-  value?: string | number;
+  value?: string | number | undefined;
   onChange?: (
     e: string | number,
   ) => void | Dispatch<SetStateAction<string | number>>;
