@@ -1,7 +1,7 @@
 "use client";
 
-import Icon from "./Icon";
-import Spinner from "./Spinner";
+import Icon from "../Icon";
+import Spinner from "../Spinner";
 import cc from "classcat";
 import type { icons } from "lucide-react";
 
@@ -28,7 +28,7 @@ export default function Button({
     <button
       {...props}
       className={cc([
-        "rounded flex items-center justify-center transition-colors disabled:opacity-20 relative shrink-0",
+        "rounded transition-colors disabled:bg-opacity-20 disabled:text-opacity-0 relative shrink-0 font-semibold flex justify-center items-center",
         ghost
           ? "bg-transparent hover:bg-primary/10 text-primary disabled:bg-transparent"
           : "bg-primary hover:bg-primary-darker text-primary-text disabled:bg-primary",
@@ -43,19 +43,22 @@ export default function Button({
       disabled={loading || props.disabled}
     >
       {loading && (
-        <div className="w-full h-full absolute inset-0 flex items-center justify-center">
+        <div
+          className={cc([
+            "w-full h-full absolute inset-0 flex items-center justify-center",
+            ghost ? "text-primary" : "text-primary-text",
+          ])}
+        >
           <Spinner sz={sz} />
         </div>
       )}
-      <div className={cc([loading && "invisible"])}>
-        {icon && (
-          <Icon
-            name={icon}
-            size={sz === "xs" ? 16 : sz === "sm" ? 18 : sz === "md" ? 20 : 24}
-          />
-        )}{" "}
-        {children}
-      </div>
+      {!loading && icon && (
+        <Icon
+          name={icon}
+          size={sz === "xs" ? 16 : sz === "sm" ? 18 : sz === "md" ? 20 : 24}
+        />
+      )}{" "}
+      {children}
     </button>
   );
 }

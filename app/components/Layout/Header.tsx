@@ -3,11 +3,11 @@ import type { HTMLAttributes, ReactElement } from "react";
 import cc from "classcat";
 
 export default function Header({
-  title,
+  logo,
   mobileFirst = false,
   ...props
 }: {
-  title: string | JSX.Element | ReactElement;
+  logo: string | JSX.Element;
   mobileFirst?: boolean;
 } & HTMLAttributes<HTMLDivElement>) {
   return (
@@ -19,7 +19,7 @@ export default function Header({
         props.className,
       ])}
     >
-      {title}
+      {logo}
     </header>
   );
 }

@@ -11,7 +11,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Layout mobileFirst={true}>
-          <Header mobileFirst={true} title="asdf"></Header>
+          <Header mobileFirst={true} logo="asdf"></Header>
           {children}
         </Layout>
       </body>
