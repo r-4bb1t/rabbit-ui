@@ -24,7 +24,15 @@ export default function Input({
   return (
     <div className={cc(["inline-flex flex-col gap-1", fullWidth && "w-full"])}>
       {label && (
-        <label className="text-sm font-semibold flex gap-0.5 items-center">
+        <label
+          className={cc([
+            "font-semibold flex gap-0.5 items-center",
+            sz == "xs" && "text-xs",
+            sz == "sm" && "text-xs",
+            sz == "md" && "text-sm",
+            sz == "lg" && "text-sm",
+          ])}
+        >
           {label}
           {props.required && (
             <div className="w-1 h-1 rounded-full bg-primary -translate-y-1" />

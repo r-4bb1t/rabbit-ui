@@ -73,7 +73,15 @@ export default function Select({
       ref={ref}
     >
       {label && (
-        <label className="text-sm font-semibold flex gap-0.5 items-center">
+        <label
+          className={cc([
+            "font-semibold flex gap-0.5 items-center",
+            sz == "xs" && "text-xs",
+            sz == "sm" && "text-xs",
+            sz == "md" && "text-sm",
+            sz == "lg" && "text-sm",
+          ])}
+        >
           {label}
         </label>
       )}
@@ -112,7 +120,7 @@ export default function Select({
             initial={{ opacity: 0, y: -5, scaleY: 0 }}
             animate={{ opacity: 1, y: 0, scaleY: 1 }}
             exit={{ opacity: 0, y: -5, scaleY: 0 }}
-            className="absolute z-10 max-h-48 overflow-auto scrollbar-thumb-primary scrollbar-track-transparent scrollbar-thin  flex flex-col border border-primary-bright divide-primary-bright top-full w-full rounded divide-y bg-white origin-top"
+            className="absolute z-10 max-h-48 overflow-auto scrollbar-thumb-primary scrollbar-track-transparent scrollbar-thin flex flex-col border border-primary-bright divide-primary-bright top-full w-full rounded divide-y bg-white origin-top"
           >
             {options.map((opt) => (
               <div

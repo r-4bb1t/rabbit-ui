@@ -23,12 +23,12 @@ export default function Modal({ mobileFirst }: { mobileFirst?: boolean }) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.7, y: 30 }}
             className={cc([
-              "bg-white/80 backdrop-blur p-4 rounded flex flex-col gap-4",
+              "bg-white/90 backdrop-blur p-4 rounded flex flex-col gap-4",
               mobileFirst && "max-w-sm",
             ])}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="w-full max-h-[560px] overflow-auto p-4">
+            <div className="w-full max-h-[500px] overflow-auto p-4">
               {modal.children}
             </div>
             <div className="w-full flex flex-row-reverse justify-between">
