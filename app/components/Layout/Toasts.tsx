@@ -71,6 +71,8 @@ const Toast = ({
         onClick={() => {
           removeToast(item.id!);
         }}
+        square
+        fullWidth={false}
       >
         <X className={cc(["w-4 h-4 text-primary-text"])} />
       </Button>

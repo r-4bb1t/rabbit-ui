@@ -37,6 +37,7 @@ export default function Modal({ mobileFirst }: { mobileFirst?: boolean }) {
                   modal.submitButtonAction();
                   closeModal();
                 }}
+                fullWidth={false}
               >
                 {modal.submitButtonText}
               </Button>
@@ -47,6 +48,7 @@ export default function Modal({ mobileFirst }: { mobileFirst?: boolean }) {
                     closeModal();
                   }}
                   ghost
+                  fullWidth={false}
                 >
                   {modal.cancelButtonText}
                 </Button>

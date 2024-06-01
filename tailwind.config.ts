@@ -17,8 +17,6 @@ const config: Config = {
           text: "#ffffff",
           bright: "#ffdddd",
         },
-        error: "#EF4444",
-        ok: "#22C55E",
       },
     },
   },

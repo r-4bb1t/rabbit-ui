@@ -12,6 +12,8 @@ export const tailwindPreset: Config = {
           text: "#f5f5f5",
           bright: "#b4b4b4",
         },
+        error: "#EF4444",
+        ok: "#22C55E",
       },
       minHeight: {
         // @ts-expect-error this can be an array

@@ -30,17 +30,18 @@ export default function Button({
     <button
       {...props}
       className={cc([
-        "rounded transition-colors disabled:text-opacity-0 disabled:[&>:not(.loading)]:opacity-0 relative shrink-0 font-semibold flex justify-center items-center",
+        "rounded transition-colors gap-2 disabled:bg-opacity-20 relative shrink-0 font-semibold flex justify-center items-center",
         ghost
           ? "bg-transparent hover:bg-primary/10 text-primary disabled:bg-transparent"
           : "bg-primary hover:bg-primary-darker text-primary-text disabled:bg-primary",
+        loading && "cursor-wait text-opacity-0 [&>:not(.loading)]:opacity-0",
         sz === "xs" && (square ? "text-xs h-7 w-7" : "text-xs px-2 h-7 w-fit"),
         sz === "sm" && (square ? "text-sm h-9 w-8" : "text-sm px-3 h-8 w-fit"),
         sz === "md" &&
           (square ? "text-md h-9 w-9" : "text-base px-4 h-9 w-fit"),
         sz === "lg" &&
           (square ? "text-lg h-11 w-11" : "text-lg px-5 h-11 w-fit"),
-        fullWidth && "w-full",
+        fullWidth && !square && "w-full",
         props.className,
       ])}
       disabled={loading || props.disabled}
