@@ -37,6 +37,10 @@ import { tailwindPreset } from "@r-4bb1t/rabbit-ui";
 
 const config: Config = {
   presets: [tailwindPreset],
+  content: [
+    "./node_modules/@r-4bb1t/rabbit-ui/dist/**/*.{js,jsx,ts,tsx}",
+    //...
+  ],
   // ...
 };
 
