@@ -1,6 +1,6 @@
 # rabbit-ui
 
-> UI components for Next.js with Tailwind CSS
+> UI components for Next.js with Tailwind CSS (WIP)
 
 [demo](https://ui.r4bb1t.dev/)
 
