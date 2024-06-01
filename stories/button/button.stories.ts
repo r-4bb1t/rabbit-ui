@@ -49,6 +49,11 @@ const meta = {
         type: "boolean",
       },
     },
+    fullWidth: {
+      control: {
+        type: "boolean",
+      },
+    },
   },
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -59,5 +64,6 @@ type Story = StoryObj<typeof meta>;
 export const button: Story = {
   args: {
     children: "Button",
+    fullWidth: true,
   },
 };

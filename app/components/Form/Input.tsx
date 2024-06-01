@@ -11,16 +11,18 @@ export interface InputProps {
     ok: string;
     status: boolean;
   }[];
+  fullWidth?: boolean;
 }
 
 export default function Input({
   label,
   sz = "md",
   error,
+  fullWidth = true,
   ...props
 }: InputProps & InputHTMLAttributes<HTMLInputElement>) {
   return (
-    <div className="inline-flex flex-col w-fit gap-1">
+    <div className={cc(["inline-flex flex-col gap-1", fullWidth && "w-full"])}>
       {label && (
         <label className="text-sm font-semibold flex gap-0.5 items-center">
           {label}

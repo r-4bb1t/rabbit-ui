@@ -21,6 +21,11 @@ const meta = {
         type: "boolean",
       },
     },
+    fullWidth: {
+      control: {
+        type: "boolean",
+      },
+    },
     /* error: {
       type:""
     },
@@ -38,6 +43,7 @@ type Story = StoryObj<typeof meta>;
 export const select: Story = {
   args: {
     value: "1",
+    fullWidth: true,
     options: [
       {
         value: "1",

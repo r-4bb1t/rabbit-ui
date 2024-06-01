@@ -27,6 +27,11 @@ const meta = {
         options: ["xs", "sm", "md", "lg"],
       },
     },
+    fullWidth: {
+      control: {
+        type: "boolean",
+      },
+    },
     /* error: {
       err: {
         type: "string",
@@ -48,6 +53,7 @@ type Story = StoryObj<typeof meta>;
 export const text: Story = {
   args: {
     placeholder: "placeholder",
+    fullWidth: true,
   },
 };
 
@@ -55,5 +61,6 @@ export const number: Story = {
   args: {
     type: "number",
     placeholder: "1",
+    fullWidth: true,
   },
 };

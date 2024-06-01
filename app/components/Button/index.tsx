@@ -13,6 +13,7 @@ export interface ButtonProps
   icon?: keyof typeof icons;
   square?: boolean;
   children?: React.ReactNode;
+  fullWidth?: boolean;
 }
 
 export default function Button({
@@ -22,6 +23,7 @@ export default function Button({
   icon,
   square = false,
   children,
+  fullWidth = true,
   ...props
 }: ButtonProps) {
   return (
@@ -38,6 +40,7 @@ export default function Button({
           (square ? "text-md h-9 w-9" : "text-base px-4 h-9 w-fit"),
         sz === "lg" &&
           (square ? "text-lg h-11 w-11" : "text-lg px-5 h-11 w-fit"),
+        fullWidth && "w-full",
         props.className,
       ])}
       disabled={loading || props.disabled}

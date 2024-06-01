@@ -13,7 +13,8 @@ import cc from "classcat";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronDown, X } from "lucide-react";
 
-export interface SelectProps {
+export interface SelectProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
   label?: string;
   sz?: "xs" | "sm" | "md" | "lg";
   disabled?: boolean;
@@ -28,6 +29,7 @@ export interface SelectProps {
   }[];
   value?: string | number | undefined;
   onChange?: (value: any) => void;
+  fullWidth?: boolean;
 }
 
 export default function Select({
@@ -38,8 +40,9 @@ export default function Select({
   options,
   value: defaultValue,
   onChange,
+  fullWidth = true,
   ...props
-}: SelectProps & HTMLAttributes<HTMLDivElement>) {
+}: SelectProps) {
   const [value, setValue] = useState<string | number | undefined>(defaultValue);
   const [open, setOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -62,7 +65,13 @@ export default function Select({
   }, []);
 
   return (
-    <div className="inline-flex flex-col gap-1 relative w-fit" ref={ref}>
+    <div
+      className={cc([
+        "inline-flex flex-col gap-1 relative",
+        fullWidth && "w-full",
+      ])}
+      ref={ref}
+    >
       {label && (
         <label className="text-sm font-semibold flex gap-0.5 items-center">
           {label}
