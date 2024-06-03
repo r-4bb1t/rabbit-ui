@@ -9,7 +9,7 @@
   "description": "Rabbit UI: UI components for Next.js with Tailwind CSS",
   "repository": {
     "type": "git",
-    "url": "https://github.com/r-4bb1t/r4bb1t-ui.git"
+    "url": "https://github.com/r-4bb1t/rabbit-ui.git"
   },
   "scripts": {
     "dev": "next dev",
